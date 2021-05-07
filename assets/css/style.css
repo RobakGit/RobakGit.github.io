@@ -8,7 +8,7 @@ h1, h2, b {
     font-family: 'Montserrat', sans-serif;
 }
 
-#header {
+header {
     position: absolute;
     width: 100%;
     height: 100px;
@@ -18,7 +18,11 @@ h1, h2, b {
     margin: 40px 0 0 100px;
 }
 
-#navigation {
+#burger {
+    display: none;
+}
+
+nav {
     float: right;
     margin: 40px 100px;
 }
@@ -28,6 +32,7 @@ h1, h2, b {
     color: black;
     margin: 0 20px;
     font-weight: bold;
+    transition: 0.2s;
 }
 
 .navbar-btn:hover, .navbar-btn:nth-of-type(1) {
@@ -157,10 +162,12 @@ h1, h2, b {
     width: 100%;
     height: 100%;
     opacity: 0;
+    background: url("../icon/look.svg") no-repeat center rgba(14,14,14,0.6);
+    transition: 0.4s;
 }
 
 .work-hover:hover {
-    background: url("../icon/look.svg") no-repeat center rgba(14,14,14,0.6);
+
     opacity: 1;
 }
 
@@ -237,8 +244,8 @@ video {
 }
 
 #arrow {
-    left: 40px;
-    top: 40px;
+    left: 38px;
+    top: 35px;
 }
 
 #services {
@@ -307,6 +314,7 @@ input {
     border: 0;
     height: 30px;
     padding: 10px;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 #name, #email {
@@ -326,6 +334,7 @@ input {
     margin: 20px;
     border: 0;
     padding: 10px;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 #submit {
@@ -336,7 +345,7 @@ input {
     cursor: pointer;
 }
 
-#footer {
+footer {
     min-height: 285px;
     background: #141414;
 }
@@ -354,7 +363,7 @@ input {
     flex-grow: 4;
 }
 
-.footer-item:nth-of-type(3), .footer-item:nth-of-type(4) {
+.footer-item:nth-of-type(3), .footer-item:nth-of-type(4), .footer-item:nth-of-type(5) {
     flex-grow: 2;
 }
 
@@ -364,11 +373,28 @@ input {
     display: block;
 }
 
+.footer-item>a::after {
+    content: '';
+    width: 0px;
+    height: 1px;
+    display: block;
+    background: grey;
+    transition: 0.3s;
+}
+
+.footer-item>a:hover::after {
+    width: 40%;
+}
+
 @media (max-width: 1200px) {
 
-    #navigation {
+    nav {
         float: right;
-        margin: 40px 50px 40px 50px;
+        margin: 40px 20px 40px 20px;
+    }
+
+    .navbar-btn {
+        margin: 0 10px;
     }
 
     #numbers {
@@ -377,6 +403,10 @@ input {
 
     .work-item {
         height: 250px;
+    }
+
+    .clients-item {
+        margin: 80px;
     }
 
     video {
@@ -393,6 +423,31 @@ input {
 }
 
 @media (max-width: 800px) {
+
+    #burger {
+        display: block;
+        float: right;
+        margin: 40px 50px;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        background: #E6E7EB;
+        text-align: center;
+    }
+
+    .navbar-btn {
+        display: block;
+        font-size: 22px;
+        margin: 50px;
+    }
+
+    #about {
+        padding: 50px;
+    }
 
     #skills-content {
         width: 100%;
@@ -424,21 +479,48 @@ input {
         width: 80%;
     }
 
+    .clients-item {
+        margin: 50px;
+    }
+
     #contact_form > p {
         width: 80%;
     }
 
     #name, #email {
         width: 40%;
-        margin: 2%;
     }
 
     #title {
-        width: 85%;
+        width: 88%;
     }
 
     #comment {
-        width: 80%;
+        width: 88%;
     }
 
+}
+
+@media (max-width: 650px) {
+
+    #about>img {
+        width: 160px;
+    }
+
+    #numbers>.container {
+        margin: 0 30%;
+    }
+
+    #contact_form {
+        padding: 100px 30px;
+    }
+
+    #name, #email {
+        width: 88%;
+        margin: 10px;
+    }
+
+    #comment {
+        margin: 10px;
+    }
 }

@@ -270,23 +270,54 @@ video {
 #testimonials {
     background: #10C9C3;
     min-height: 500px;
-    line-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     color: white;
 }
 
 #testimonials>h2 {
     width: 40%;
-    margin: auto;
-    line-height: 1.5;
-    display: inline-block;
-    vertical-align: middle;
+    margin: 120px 0 0 0;
 }
 
 #testimonials>h2>span {
     line-height: 80px;
     font-size: 1rem;
     font-weight: normal;
+}
+
+#testimonials ul {
+    width: 102px;
+    margin: 20px 0;
+}
+
+#testimonials ul li {
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+    float: left;
+    margin-left: 10px;
+    list-style-type: none;
+    background: lightgray;
+    cursor: pointer;
+}
+
+#testimonials ul li.active {
+    background: white;
+    margin-top: -2px;
+    width: 16px;
+    height: 16px;
+
+}
+
+.slideText {
+    display: none;
+}
+
+.slideText:nth-of-type(2) {
+    display: block;
 }
 
 #clients {

@@ -291,6 +291,7 @@ video {
 #testimonials ul {
     width: 102px;
     margin: 20px 0;
+    padding: 0;
 }
 
 #testimonials ul li {
